@@ -1,0 +1,124 @@
+/* ========== Global Styles ========== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #f4f4f9;
+}
+
+h1, h2, h3 {
+  margin: 0 0 10px;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+/* ========== Header ========== */
+.header {
+  background: #0078d7;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* ========== Navigation (Flexbox) ========== */
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: #333;
+}
+
+.navbar li {
+  margin: 0 15px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+}
+
+.navbar a:hover {
+  background: #555;
+  border-radius: 5px;
+}
+
+/* ========== Main Layout (CSS Grid) ========== */
+.main-layout {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.sidebar {
+  background: #e1ecf7;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* ========== Cards (Flexbox) ========== */
+.card-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.card {
+  background: #fafafa;
+  border: 1px solid #ccc;
+  flex: 1 1 calc(33.33% - 20px);
+  min-width: 200px;
+  padding: 15px;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* ========== Footer ========== */
+.footer {
+  text-align: center;
+  background: #333;
+  color: white;
+  padding: 15px;
+}
+
+/* ========== Responsive Breakpoints ========== */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .main-layout {
+    grid-template-columns: 2fr 1fr;
+  }
+  .navbar ul {
+    flex-wrap: wrap;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .main-layout {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    order: -1; /* Sidebar goes above content */
+  }
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  .navbar li {
+    margin: 10px 0;
+  }
+}
